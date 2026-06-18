@@ -1,0 +1,58 @@
+## .NET Core gitignore
+# Build results
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored if you have a package restore step
+# packages/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# DotCover
+*.dotCover
+
+# NCrunch
+*.ncrunch*
+
+# Build logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Publish output
+publish/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Azure Functions
+bin/**
+obj/**
+
+# Entity Framework Core migrations
+Migrations/**
+
+# Windows image file caches
+Thumbs.db
+
+# End of gitignore
