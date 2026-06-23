@@ -10,4 +10,13 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<TodoItem> TodoItems => Set<TodoItem>();
+    public DbSet<Device> Devices => Set<Device>();
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Device>()
+            .HasIndex(d => d.DeviceToken)
+            .IsUnique();
+    }
 }

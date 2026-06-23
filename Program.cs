@@ -1,5 +1,6 @@
 using DotnetPN.Data;
 using DotnetPN.Interfaces;
+using DotnetPN.Services;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -14,6 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 // Register UnitOfWork for repository pattern
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddSingleton<IFcmService, FcmService>();
 
 var app = builder.Build();
 

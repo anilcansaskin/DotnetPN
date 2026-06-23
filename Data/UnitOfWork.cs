@@ -12,6 +12,7 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly AppDbContext _context;
     private IRepository<TodoItem>? _todoItems;
+    private IDeviceRepository? _devices;
 
     public UnitOfWork(AppDbContext context)
     {
@@ -19,6 +20,7 @@ public class UnitOfWork : IUnitOfWork
     }
 
     public IRepository<TodoItem> TodoItems => _todoItems ??= new Repository<TodoItem>(_context);
+    public IDeviceRepository Devices => _devices ??= new DeviceRepository(_context);
 
     public async Task<int> SaveChangesAsync()
     {

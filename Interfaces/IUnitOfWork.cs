@@ -10,5 +10,6 @@ namespace DotnetPN.Interfaces;
 public interface IUnitOfWork : System.IDisposable
 {
     IRepository<TodoItem> TodoItems { get; }
+    IDeviceRepository Devices { get; }
     Task<int> SaveChangesAsync();
 }
